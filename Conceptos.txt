@@ -1,0 +1,23 @@
+Spring Security Filter Chain:
+
+Es una serie de filtros que se aplican a las solicitudes entrantes en una aplicación web para proporcionar seguridad y autenticación.
+
+Cuando resivimos una peticion en la aplicacion el SpringSecurityFilterChain la captura y empieza a pasarla por todos los filtros de seguridad de manera encadenada, hasta que llega al BasicAuthenticationFilter este verifica el usuario y password enviada en la peticion son correctos o no, pero lo que ocurre detalladamente por dentro es que el BasicAutenticationFilter va a el AuthenticationManager es el encargado de coordinar con que se quiere autenticar el usuario, en segundo paso este llama a el Authentication Provider el cual se encarga de verificar el usuario y password por consiguiente este llama al UserDetailsService y es ahi donde la password que se recibio de la peticion coincide de ser asi devuelve una respuesta a el authenticationManager y este a el BasicAuthenticationFilter y debe de seguir los filtros que se tengan configurados en ese momento
+
+El orden y la configuración de los filtros en la cadena se definen en la configuración de Spring Security, y los desarrolladores pueden personalizar esta cadena según las necesidades específicas de su aplicación. Algunos de los filtros comunes en la cadena de Spring Security incluyen:
+
+1. UsernamePasswordAuthenticationFilter: Este filtro maneja la autenticación del usuario a través de un formulario de inicio de sesión.
+
+2. BasicAuthenticationFilter: Procesa las solicitudes de autenticación HTTP básica.
+
+3. AuthorizationFilter: Comprueba si un usuario tiene los permisos adecuados para acceder a un recurso específico.
+
+4. SessionManagementFilter: Gestiona las sesiones de usuario y las estrategias de control de acceso.
+
+5. Otros filtros personalizables para necesidades específicas de seguridad.
+
+CSRF:
+Es un ataque que falsifica una peticion web pasandose por un usuario autorizado 
+
+CORS configuracion:
+Este es un sistema de seguridad del backend que permite decidir que peticiones desde otros origenes quiere permitir que lleguen a su servicio y cuales no, si se detecta un consumo desde un origen diferente donde se encuentra el backend pues el backend en este caso bloqueara esa peticion por politicas de seguridad 
