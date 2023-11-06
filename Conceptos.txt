@@ -20,4 +20,14 @@ CSRF:
 Es un ataque que falsifica una peticion web pasandose por un usuario autorizado 
 
 CORS configuracion:
-Este es un sistema de seguridad del backend que permite decidir que peticiones desde otros origenes quiere permitir que lleguen a su servicio y cuales no, si se detecta un consumo desde un origen diferente donde se encuentra el backend pues el backend en este caso bloqueara esa peticion por politicas de seguridad 
+Este es un sistema de seguridad del backend que permite decidir que peticiones
+desde otros origenes quiere permitir que lleguen a su servicio y cuales no, si
+se detecta un consumo desde un origen diferente donde se encuentra el backend pues
+el backend en este caso bloqueara esa peticion por politicas de seguridad
+
+requestMatchers:
+se utiliza principalmente para configurar el enrutamiento de solicitudes en una
+aplicación web basada en Spring MVC. Spring MVC es un módulo del Spring Framework
+que se utiliza para desarrollar aplicaciones web y RESTful. El enrutamiento de solicitudes
+en Spring MVC se basa en el uso de "request matchers" para mapear solicitudes entrantes a
+controladores y métodos específicos.
