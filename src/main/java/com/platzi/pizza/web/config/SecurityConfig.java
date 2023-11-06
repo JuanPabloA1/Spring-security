@@ -11,16 +11,17 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class SecurityConfig {
 	
-//	@Bean
-//	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        http.csrf().disable()
-////			.cors().and()
-//			.authorizeHttpRequests()
-//			.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
-//			.anyRequest()
-//			.authenticated()
-//			.and()
-//			.httpBasic(withDefaults());
-//		return http.build();
-//	}
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+			.cors().and()
+			.authorizeHttpRequests()
+			.requestMatchers(HttpMethod.GET, "/api/pizzas/**").permitAll()
+			.requestMatchers(HttpMethod.PUT).denyAll()
+			.anyRequest()
+			.authenticated()
+			.and()
+			.httpBasic(withDefaults());
+		return http.build();
+	}
 }
